@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0-20221212</app.runtime>
-		<mule.maven.plugin.version>3.8.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -29,6 +29,20 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				<classifier>mule-application</classifier>
+				<cloudHubDeployment>
+					<muleVersion>4.4.0</muleVersion>
+					<username>${env.PLATFORM_USERNAME}</username>
+					<password>${env.PLATFORM_PASSWORD}</password>
+					<applicationName>mule-email</applicationName>
+					<environment>Sandbox</environment>
+					<workers>1</workers>
+					<workerType>MICRO</workerType>
+					<objectStoreV2>true</objectStoreV2>
+					<region>us-east-2</region>
+				</cloudHubDeployment>
+				</configuration>			
 			</plugin>
 		</plugins>
 	</build>
