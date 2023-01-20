@@ -22,6 +22,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<email:send doc:name="Send" doc:id="3814804a-0348-4066-a866-399c7402fdbc" fromAddress="nilambpatil1611@gmail.com" config-ref="Email_SMTP">
 			<email:to-addresses >
 				<email:to-address value="nilambpatil1611@gmail.com" />
+				<email:to-address value="thenilampatil16@gmail.com" />
 			</email:to-addresses>
 			<email:body contentType="text/html" >
 				<email:content ><![CDATA[#["<h1> hello </h1>"]]]></email:content>
